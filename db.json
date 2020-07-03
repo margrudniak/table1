@@ -1,0 +1,19 @@
+{
+  "computers": {
+      "Dell": [
+        { "id": 1, "fd": "01-02-1984", "fr": "Michael Dell" }
+      ],
+      "Asus": [
+        { "id": 2, "fd": "02-04-1989", "fr": "Ted Hsu" }
+      ],
+      "Fujitsu": [
+        { "id": 3, "fd": "20-06-1935", "fr": "Pierre Ducros" }
+      ],
+      "Huawei": [
+        { "id": 4, "fd": "xx-xx-1987", "fr": "Ren Zhengfei" }
+      ],
+      "MSI": [
+        { "id": 5, "fd": "04-08-1987", "fr": "Joseph Hsu" }
+      ]
+    }
+}

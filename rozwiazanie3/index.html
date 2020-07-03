@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Integracja Systemów - Marcin Grudniak</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+    <script src="../projekt3/main.js"></script>
+</head>
+
+<body>
+    <input type="file" id="loadFile" onchange="comps()" />
+    <button id="save" onclick="save()">zapisz dane do pliku TXT</button>
+    <button onclick="read()">import danych z Bazy Danych</button>
+    <button onclick="readFromXML()">import danych z XML</button>
+    <button onclick="saveToXML()">zapis danych do XML</button>
+    <button id="click" onclick="readjson()">REST</button>
+    <table id="table" style="width:100%" border="1">
+        <thead>
+            <tr id="tr">
+                <th>Producent</th>
+                <th>wielkość matrycy</th>
+                <th>rozdzielczość</th>
+                <th>typ matrycy</th>
+                <th>?</th>
+                <th>Procesor</th>
+                <th>liczba rdzeni fizycznych</th>
+                <th>taktowanie</th>
+                <th>RAM</th>
+                <th>pojemność dysku</th>
+                <th>typ dysku</th>
+                <th>karta graficzna</th>
+                <th>pamięć karty graficznej</th>
+                <th>system operacyjny</th>
+                <th>Napęd Optyczny</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr id="1">
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr id="2">
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr id="3">
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr id="4">
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr id="5">
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr id="6">
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr id="7">
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr id="8">
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+
+
+        function readjson() {
+            fetch('http://localhost:3000/computers')
+                .then((response) => {
+                    return response.json();
+                })
+                .then((myJson) => {
+                    let x = JSON.stringify(myJson);
+                    var result = [];
+
+                    for (var i in myJson)
+                        result.push([i, myJson[i]]);
+
+                    $('table').find('tr').each(function () {
+                        $(this).find('th').eq(-1).after('<th>Data założenia</th>');
+                        $(this).find('th').eq(-2).after('<th>Założyciel</th>');
+                    });
+
+                    $("tr").find("td:nth-child(15)").after('<td>'+'</td>');
+                    $("tr").find("td:nth-child(16)").after('<td>'+'</td>');
+
+                    $('#table').find('tr').eq(1).find('td').eq(15).html(result[0][1][0].fr);
+                    $('#table').find('tr').eq(2).find('td').eq(15).html(result[1][1][0].fr);
+                    $('#table').find('tr').eq(3).find('td').eq(15).html(result[2][1][0].fr);
+                    $('#table').find('tr').eq(4).find('td').eq(15).html(result[3][1][0].fr);
+                    $('#table').find('tr').eq(5).find('td').eq(15).html(result[4][1][0].fr);
+                    $('#table').find('tr').eq(6).find('td').eq(15).html(result[0][1][0].fr);
+                    $('#table').find('tr').eq(7).find('td').eq(15).html(result[1][1][0].fr);
+                    $('#table').find('tr').eq(8).find('td').eq(15).html(result[2][1][0].fr);
+
+                    $('#table').find('tr').eq(1).find('td').eq(16).html(result[0][1][0].fd);
+                    $('#table').find('tr').eq(2).find('td').eq(16).html(result[1][1][0].fd);
+                    $('#table').find('tr').eq(3).find('td').eq(16).html(result[2][1][0].fd);
+                    $('#table').find('tr').eq(4).find('td').eq(16).html(result[3][1][0].fd);
+                    $('#table').find('tr').eq(5).find('td').eq(16).html(result[4][1][0].fd);
+                    $('#table').find('tr').eq(6).find('td').eq(16).html(result[0][1][0].fd);
+                    $('#table').find('tr').eq(7).find('td').eq(16).html(result[1][1][0].fd);
+                    $('#table').find('tr').eq(8).find('td').eq(16).html(result[2][1][0].fd);
+
+                });
+        }
+    </script>
+</body>
+
+</html>
