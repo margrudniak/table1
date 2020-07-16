@@ -9,13 +9,13 @@ A project that I made for my university lecture. It contains such functionalitie
 - loading data about the manufacturer's founder and the date of establishment from a locally placed server containing data from a JSON file
 
 # Setup
-Update info about database in main.js
-Then You can launch local server based on index.html file.
-To run local server with JSON file, type in terminal (while being in root folder):
+Update info about database in main.js. 
+
+# Start application
+You can launch local server based on index.html file. To run local server with JSON file, type in terminal (while being in root folder):
 ```bash
 json-server --watch db.json
 ```
-
 ## Used technologies
 * SASS
 * Firebase
