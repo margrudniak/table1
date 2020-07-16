@@ -1,0 +1,95 @@
+body {
+  position: relative;
+  background-color: rgba(228, 80, 11, 0.541);
+}
+
+body .file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: rgba(17, 0, 255, 0.904);
+}
+
+body button {
+  display: inline-block;
+  border: none;
+  color: #fff;
+  background-color: rgba(17, 0, 255, 0.904);
+  padding: 15px 45px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 3px;
+  border-radius: 200px;
+  text-align: center;
+  outline: none;
+  -webkit-transition: background-color 0.1s ease;
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+}
+
+body button::after {
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+  position: absolute;
+  content: "";
+  height: 4px;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.904);
+  opacity: 0.18;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  left: 0;
+}
+
+body button:hover {
+  color: #fff;
+}
+
+body button:hover {
+  background-color: rgba(41, 26, 255, 0.904);
+}
+
+body button:hover::after {
+  opacity: 0.22;
+}
+
+body button:active {
+  background-color: rgba(15, 0, 230, 0.904);
+}
+
+body button:active::after {
+  opacity: 0.32;
+}
+
+table {
+  margin-top: 100px;
+  border-collapse: collapse;
+}
+
+table thead {
+  font-family: Montserrat;
+  background-color: #669ffa;
+}
+
+table thead th {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+table tbody tr td {
+  text-align: center;
+  background-color: #accafa;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid black;
+}
+
+table tbody tr td:hover {
+  background-color: #55709c;
+}
+/*# sourceMappingURL=main.css.map */

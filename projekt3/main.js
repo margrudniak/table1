@@ -8,7 +8,7 @@ function comps() {
   // do wybrania danego pliku, typ danych Blob do wyczytwania dużych ilości danych
   var file = input.files[0];
   var fr = new FileReader();
-  fr.onload = function() {
+  fr.onload = function () {
     var text = fr.result;
     // \s bialy znak, * dla wszystkiego
     var re = /\s*;\s*/;
@@ -47,13 +47,13 @@ function save() {
 }
 
 var firebaseConfig = {
-  apiKey: "AIzaSyCL4gEQVSstwfDIliSNz5vsCa-67RX7mGc",
-  authDomain: "komputer-d5621.firebaseapp.com",
-  databaseURL: "https://komputer-d5621.firebaseio.com",
-  projectId: "komputer-d5621",
-  storageBucket: "komputer-d5621.appspot.com",
-  messagingSenderId: "829085081225",
-  appId: "1:829085081225:web:b10c8e585f09e6e83ab058"
+  apiKey: "type-info",
+  authDomain: "type-info",
+  databaseURL: "type-info",
+  projectId: "type-info",
+  storageBucket: "type-info",
+  messagingSenderId: "type-info",
+  appId: "type-info",
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -61,10 +61,10 @@ firebase.initializeApp(firebaseConfig);
 function read() {
   $("#tbody tr").remove();
   var database = firebase.database();
-  database.ref().once("value", function(snapshot) {
+  database.ref().once("value", function (snapshot) {
     if (snapshot.exists()) {
       var content = "";
-      snapshot.forEach(function(data) {
+      snapshot.forEach(function (data) {
         var val = data.val();
         content += "<tr>";
         content += '<td contenteditable="true">' + val.producent + "</td>";
@@ -92,7 +92,7 @@ function read() {
 
 function readFromXML() {
   let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
+  xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       myFunction(this);
     }
@@ -203,7 +203,7 @@ function myFunction(xml) {
 
 function saveToXML() {
   var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
+  xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       myFunction1(this);
       myFunction2(this);
@@ -217,8 +217,8 @@ function myFunction1(xml) {
   let x, xmlDoc, txt;
   xmlDoc = xml.responseXML;
   x = xmlDoc.getElementsByTagName("physical_cores")[0].childNodes[0];
-  txt = "Przed zmianą: " + x.nodeValue + '\n';
-  x.nodeValue=$('#table').find('tr').eq(1).find('td').eq(6).text();
+  txt = "Przed zmianą: " + x.nodeValue + "\n";
+  x.nodeValue = $("#table").find("tr").eq(1).find("td").eq(6).text();
   txt += "Po zmianie: " + x.nodeValue;
   console.log(txt);
 }
@@ -227,8 +227,8 @@ function myFunction2(xml) {
   let x, xmlDoc, txt;
   xmlDoc = xml.responseXML;
   x = xmlDoc.getElementsByTagName("ram")[1].childNodes[0];
-  txt = "Przed zmianą: " + x.nodeValue + '\n';
-  x.nodeValue=$('#table').find('tr').eq(2).find('td').eq(8).text();
+  txt = "Przed zmianą: " + x.nodeValue + "\n";
+  x.nodeValue = $("#table").find("tr").eq(2).find("td").eq(8).text();
   txt += "Po zmianie: " + x.nodeValue;
   console.log(txt);
 }
